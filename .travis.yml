@@ -3,6 +3,9 @@ python:
   - "2.7"
   - "3.4"
   - "3.5"
+os:
+  - linux
+  - osx
 install: 
   - "pip install nose"
   - "pip install coverage"
