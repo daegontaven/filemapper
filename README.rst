@@ -22,6 +22,9 @@ Tested Combinations:
   
 Using this module in any combination other than those listed above may produce unexpected results.
 
+Unfortunately this module is currently incompatable with OSX, so do not install it without proper
+undertsanding of the source code.
+
 Installation
 ------------
 .. code-block:: python
