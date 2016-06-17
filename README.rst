@@ -38,7 +38,9 @@ Creating variables
 """"""""""""""""""
 
      >>>import filemapper as fm
+     
      >>>print fm.create('resources') #Creates variables for files within the folder resources
+     
      {'nouns.dat':u'resources\\nouns.dat','adjectives.dat':u'resources\\adjectives.dat'}
      
      >>>f = open(fm.read('nouns.dat')) #'nouns.dat', our variable here needs to be passed into read() before it can be used.
@@ -56,6 +58,7 @@ Creating variables
      zymurgy
 
 Example Cases
+
      >>>f = fm.create('resources')
      
      >>>new_f = [sub_f[0] for sub_f in f.items()]
@@ -78,7 +81,8 @@ Loading Files
      >>>for i in fm.read('nouns.dat'):print i
      
      [Stdout Ommitted due to large size]
-     
+
+
 Closing Files
 """""""""""""
 
