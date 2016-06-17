@@ -3,7 +3,7 @@ python:
   - "2.7"
   - "3.4"
   - "3.5"
-install: "pip install nose"
-script: nosetests
+install: "pip install nose coverage"
+script: nosetests --with-coverage
 after_success:
   - bash <(curl -s https://codecov.io/bash)

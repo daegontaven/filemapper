@@ -6,4 +6,4 @@ coverage:
       default:
         target: 95
     patch: false
-changes: false
+    changes: false
