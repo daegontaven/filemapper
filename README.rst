@@ -1,3 +1,5 @@
+.. contents::
+
 ============
 filemapper
 ============
@@ -9,7 +11,6 @@ and maps them(Do not confuse this for the built-in maps() function) to their fil
 These variables can then be accessed like regular files using read(). All the functions defined
 here return a tuple of successfully processed files.
 
--------------
 Compatability
 -------------
 
@@ -20,74 +21,65 @@ Tested Combinations:
   
 Using this module in any combination other than those listed above may produce unexpected results.
 
-------------
 Installation
 ------------
+.. code-block:: python
 
-     pip install filemapper
+    pip install filemapper
 
 -----
 Usage
 -----
+.. code-block:: python
 
-     >>>import filemapper as fm
-     
-     >>>help(fm) #This will display help for this module
+    >>>import filemapper as fm
+    >>>help(fm) #This will display help for this module
 
 Creating variables
 """"""""""""""""""
+.. code-block:: python
 
-     >>>import filemapper as fm
-     
-     >>>print fm.create('resources') #Creates variables for files within the folder resources
-     
-     {'nouns.dat':u'resources\\nouns.dat','adjectives.dat':u'resources\\adjectives.dat'}
-     
-     >>>f = open(fm.read('nouns.dat')) #'nouns.dat', our variable here needs to be passed into read() before it can be used.
-     
-     >>>for i in f:print i #Prints out the whole 'nouns.dat' file even though we never assigned a variable directly.
-     
-     A-bomb
-     
-     A-bombs
-     
-     A-frame
-     
-     [Trunctuated 90959 Lines]
-     
-     zymurgy
+    >>>import filemapper as fm
+    >>>print fm.create('resources') #Creates variables for files within the folder resources
+    {'nouns.dat':u'resources\\nouns.dat','adjectives.dat':u'resources\\adjectives.dat'}
+    
+    >>>f = open(fm.read('nouns.dat')) #Passed into read() before it can be used.
+    
+    >>>for i in f:print i #Prints out the whole 'nouns.dat' file even though we never assigned a variable directly.
+    A-bomb
+    A-bombs
+    A-frame
+    [Trunctuated 90959 Lines]
+    zymurgy
 
-Example Cases
+Example Case
 
-     >>>f = fm.create('resources')
-     
-     >>>new_f = [sub_f[0] for sub_f in f.items()]
-     
-     >>>for i in new_f: #Only prints the content of files that start with 'a'
-     
-     ...    if i[0] == 'a':
-     
-     ...        for x in  open(i, 'r'):print x
-     
-     [Stdout Ommitted due to large size]
+.. code-block:: python  
+
+    >>>f = fm.create('resources')
+    >>>new_f = [sub_f[0] for sub_f in f.items()]
+   
+    >>>for i in new_f: #Only prints the content of files that start with 'a'
+    ...    if i[0] == 'a':
+    ...        for x in  open(i, 'r'):print x
+    [Stdout Ommitted due to large size]
 
 Loading Files
 """""""""""""
+.. code-block:: python
 
-     >>>print fm.load('resources','w') #Omittiing the second argument will default to read only mode
-     
-     ('nouns.dat','adjectives.dat')
-     
-     >>>for i in fm.read('nouns.dat'):print i
-     
-     [Stdout Ommitted due to large size]
+    >>>print fm.load('resources','w') #Omittiing the second argument will default to read only mode
+    ('nouns.dat','adjectives.dat')
+    >>>for i in fm.read('nouns.dat'):print i
+    [Stdout Ommitted due to large size]
 
 
 Closing Files
 """""""""""""
+.. code-block:: python
 
-     >>>fm.close('nouns.dat')
-     
-     ('adjectives.dat')
-     
-     >>>fm.close() #Closes all the files
+    >>>fm.close('nouns.dat')
+    
+    ('adjectives.dat')
+    
+    >>>fm.close() #Closes all the files
