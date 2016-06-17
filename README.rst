@@ -4,7 +4,10 @@
 filemapper
 ============
 
-.. image:: https://img.shields.io/travis/daegontaven/filemapper/master.svg?maxAge=2592000?style=plastic   :target: https://travis-ci.org/daegontaven/filemapper
+.. image:: https://img.shields.io/travis/daegontaven/filemapper/master.svg?maxAge=2592000?style=plastic
+    :target: https://travis-ci.org/daegontaven/filemapper
+
+
 
 This module is designed to create variables for files that are to be accessed collectively.
 Since files tend to take up a lot of memory, it is not advised to use this module to keep
