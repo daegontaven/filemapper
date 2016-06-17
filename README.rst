@@ -45,7 +45,7 @@ Creating variables
     
     >>>f = open(fm.read('nouns.dat')) #Passed into read() before it can be used.
     
-    >>>for i in f:print i #Prints out the whole 'nouns.dat' file even though we never assigned a variable directly.
+    >>>for i in f:print i #Prints out the whole 'nouns.dat'
     A-bomb
     A-bombs
     A-frame
