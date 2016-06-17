@@ -42,9 +42,7 @@ Creating variables
     >>>import filemapper as fm
     >>>print fm.create('resources') #Creates variables for files within the folder resources
     {'nouns.dat':u'resources\\nouns.dat','adjectives.dat':u'resources\\adjectives.dat'}
-    
     >>>f = open(fm.read('nouns.dat')) #Passed into read() before it can be used.
-    
     >>>for i in f:print i #Prints out the whole 'nouns.dat'
     A-bomb
     A-bombs
@@ -58,7 +56,6 @@ Example Case
 
     >>>f = fm.create('resources')
     >>>new_f = [sub_f[0] for sub_f in f.items()]
-   
     >>>for i in new_f: #Only prints the content of files that start with 'a'
     ...    if i[0] == 'a':
     ...        for x in  open(i, 'r'):print x
@@ -79,7 +76,5 @@ Closing Files
 .. code-block:: python
 
     >>>fm.close('nouns.dat')
-    
     ('adjectives.dat')
-    
     >>>fm.close() #Closes all the files
