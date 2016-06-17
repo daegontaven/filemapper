@@ -7,6 +7,9 @@ filemapper
 .. image:: https://img.shields.io/travis/daegontaven/filemapper/master.svg?maxAge=2592000?style=plastic
     :target: https://travis-ci.org/daegontaven/filemapper
     
+.. image:: https://img.shields.io/codecov/c/github/daegontaven/filemapper.svg?maxAge=2592000?style=plastic
+    :target: https://codecov.io/gh/daegontaven/filemapper
+    
 .. image:: https://img.shields.io/pypi/v/filemapper.svg?maxAge=2592000?style=plastic
     :target: https://pypi.python.org/pypi/filemapper
 
