@@ -31,6 +31,7 @@ Usage
 -----
 
      >>>import filemapper as fm
+     
      >>>help(fm) #This will display help for this module
 
 Creating variables
@@ -41,32 +42,48 @@ Creating variables
      {'nouns.dat':u'resources\\nouns.dat','adjectives.dat':u'resources\\adjectives.dat'}
      
      >>>f = open(fm.read('nouns.dat')) #'nouns.dat', our variable here needs to be passed into read() before it can be used.
+     
      >>>for i in f:print i #Prints out the whole 'nouns.dat' file even though we never assigned a variable directly.
+     
      A-bomb
+     
      A-bombs
+     
      A-frame
+     
      [Trunctuated 90959 Lines]
+     
      zymurgy
 
 Example Cases
      >>>f = fm.create('resources')
+     
      >>>new_f = [sub_f[0] for sub_f in f.items()]
+     
      >>>for i in new_f: #Only prints the content of files that start with 'a'
+     
      ...    if i[0] == 'a':
+     
      ...        for x in  open(i, 'r'):print x
+     
      [Stdout Ommitted due to large size]
 
 Loading Files
 """""""""""""
 
      >>>print fm.load('resources','w') #Omittiing the second argument will default to read only mode
+     
      ('nouns.dat','adjectives.dat')
+     
      >>>for i in fm.read('nouns.dat'):print i
+     
      [Stdout Ommitted due to large size]
      
 Closing Files
 """""""""""""
 
      >>>fm.close('nouns.dat')
+     
      ('adjectives.dat')
+     
      >>>fm.close() #Closes all the files
