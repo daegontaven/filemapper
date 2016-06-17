@@ -9,37 +9,6 @@ coverage:
   range: "70...100"
 
   notify:
-    slack:
-      default:
-        url: null
-        threshold: null
-        branches: null
-        attachments: "sunburst, diff"
-
-    hipchat:
-      default:
-        url: null
-        notify: no
-        threshold: null
-        branches: null
-        card: yes
-        only_pulls: null
-        message: null
-
-    gitter:
-      default:
-        url: null
-        threshold: null
-        branches: null
-        message: null
-
-    webhook:
-      default:
-        url: null
-        threshold: null
-        branches: null
-        only_pulls: null
-
     irc:
       default:
         server: irc.greycadet.com:7000
