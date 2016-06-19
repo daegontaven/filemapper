@@ -2,21 +2,17 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import os, sys
 from sys import platform as _platform
 
-global mapped_files, sep
+global mapped_files
 mapped_files = {}
-sep = '/'
-
-if _platform == "win32":
-    sep = '\\'
 
 def map_files(path):
-    global mapped_files, sep
+    global mapped_files
     if sys.version_info < (3,):
         root, dirs, files = os.walk(path).next()
     else:
         root, dirs, files = os.walk(path).__next__()
     for f in files:
-        mapped_files[f]='%s%s%s' % (root,sep,f)
+        mapped_files[f]= os.path.join(root, f)
     return mapped_files
 
 if __name__=="__main__":
