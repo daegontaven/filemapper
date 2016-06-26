@@ -20,6 +20,12 @@ and maps them(Do not confuse this for the built-in maps() function) to their fil
 These variables can then be accessed like regular files using read(). All the functions defined
 here return a tuple of successfully processed files.
 
+============
+This Package Has Been Deemed Useless By /r/Python
+============
+
+Only use this package as a reference for all bad practices in writing packages.
+
 Compatability
 -------------
 
