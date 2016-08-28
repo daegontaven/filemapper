@@ -154,7 +154,15 @@ def reset():
     file_dict = {}
     closed_files = []
     return cls
+
+
+def clear():
+    """The same as the reset function. But does not close files."""
+    global flag, closed_files, file_dict
+    flag = None
+    file_dict = {}
+    closed_files = []
         
 
-if __name__ == "__main__":
-    print(load())
+#if __name__ == "__main__":
+#    print(load())

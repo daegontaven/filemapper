@@ -41,13 +41,23 @@ def test_open():
         pass
     print(fm.load('resources'))
     try:
-        print(fm.close('nouns.dat','verbs.dat','test.dat'))
+        print(fm.close('nouns.dat', 'verbs.dat', 'test.dat'))
         raise ValueError("test_open failed")
     except IOError:
         print("test_open passed")
 
 
-if __name__ == "__main__":
-    test_setup()
-    test_close()
-    test_open()
+def test_create():
+    print("being test_create")
+    try:
+        print(fm.reset())
+    except:
+        pass
+    print(fm.create())
+    print("test_create passed")
+
+
+#if __name__ == "__main__":
+#    test_setup()
+#    test_close()
+#    test_open()
