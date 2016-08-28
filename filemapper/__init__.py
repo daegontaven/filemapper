@@ -149,6 +149,7 @@ def reset():
     using this function.
     """
     cls = close()
+    global flag, closed_files, file_dict
     flag = None
     file_dict = {}
     closed_files = []

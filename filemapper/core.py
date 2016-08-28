@@ -18,6 +18,3 @@ def map_files(path):
     for f in files:
         mapped_files[f] = os.path.join(root, f)
     return mapped_files
-
-if __name__ == "__main__":
-    print(map_files())
