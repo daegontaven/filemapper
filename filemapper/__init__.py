@@ -143,5 +143,17 @@ def read(file_name):
     return file_dict[file_name]
 
 
+def reset():
+    """
+    Resets, deletes and closes all variables in a map. Be careful when when
+    using this function.
+    """
+    cls = close()
+    flag = None
+    file_dict = {}
+    closed_files = []
+    return cls
+        
+
 if __name__ == "__main__":
     print(load())
