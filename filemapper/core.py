@@ -1,9 +1,13 @@
-from __future__ import absolute_import, division, print_function, unicode_literals
-import os, sys
-from sys import platform as _platform
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+import sys
+import os
 
 global mapped_files
 mapped_files = {}
+
 
 def map_files(path):
     global mapped_files
@@ -12,8 +16,8 @@ def map_files(path):
     else:
         root, dirs, files = os.walk(path).__next__()
     for f in files:
-        mapped_files[f]= os.path.join(root, f)
+        mapped_files[f] = os.path.join(root, f)
     return mapped_files
 
-if __name__=="__main__":
+if __name__ == "__main__":
     print(map_files())

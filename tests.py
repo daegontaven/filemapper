@@ -1,9 +1,10 @@
 #!/usr/bin/env python
-#coding:utf-8
-#Tests
+# coding:utf-8
+# Tests
 
 from nose.tools import *
 import filemapper as fm
+
 
 def test_setup():
     print(fm.create('resources'))
@@ -12,6 +13,8 @@ def test_setup():
         print(i)
     print(fm.close('nouns.dat'))
     print(fm.close())
+    if 'words.dat' and 'nouns.dat' in fm.create('resources'):
+        print 'Files Missing'
 
 if __name__ == "__main__":
     test_setup()
