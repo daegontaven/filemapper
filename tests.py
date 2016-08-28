@@ -5,23 +5,23 @@
 from nose.tools import *
 import filemapper as fm
 
-
+        
 def test_setup():
-    print(fm.create())
+    print("begin test_close")
     print(fm.create('resources'))
+    if 'words.dat' and 'nouns.dat' in fm.create('resources'):
+        print('Files Missing')
     print(fm.load('resources'))
     for i in fm.read('adverbs.dat'):
         print(i)
-    print(fm.close('nouns.dat'))
+    print(fm.close('words.dat'))
     print(fm.close())
-    if 'words.dat' and 'nouns.dat' in fm.create('resources'):
-        print('Files Missing')
-
-        
-def test_coverage():
-    print(fm.create())
-    print(fm.close())
+    try:
+        print(fm.close('words.dat'))
+    except IOError:
+        print("test_close passed")
+    
 
 if __name__ == "__main__":
-    test_setup()
-    test_coverage()
+    #test_setup()
+    test_close()
