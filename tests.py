@@ -14,7 +14,7 @@ def test_setup():
     print(fm.close('nouns.dat'))
     print(fm.close())
     if 'words.dat' and 'nouns.dat' in fm.create('resources'):
-        print 'Files Missing'
+        print('Files Missing')
 
 if __name__ == "__main__":
     test_setup()
