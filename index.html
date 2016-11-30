@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Filemapper by daegontaven</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Filemapper</h1>
+        <p>Module to handle automatic variable naming, multiple files and some file acrobatics in python</p>
+
+        <p class="view"><a href="https://github.com/daegontaven/filemapper">View the Project on GitHub <small>daegontaven/filemapper</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/daegontaven/filemapper/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/daegontaven/filemapper/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/daegontaven/filemapper">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="filemapper" class="anchor" href="#filemapper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>filemapper</h1>
+
+<p>[<img src="https://img.shields.io/travis/daegontaven/filemapper/master.svg?maxAge=2592000?style=plastic" alt="image">]</p>
+
+<p>[<img src="https://img.shields.io/codecov/c/github/daegontaven/filemapper.svg?maxAge=2592000?style=plastic" alt="image">]</p>
+
+<p>[<img src="https://img.shields.io/pypi/v/filemapper.svg?maxAge=2592000?style=plastic" alt="image">]</p>
+
+<p>This module is designed to create variables for files that are to be
+accessed collectively. Since files tend to take up a lot of memory, it
+is not advised to use this module to keep multiple files in a directory
+open. The mapper works by creating variables with same file name and
+maps them(Do not confuse this for the built-in maps() function) to their
+file location. These variables can then be accessed like regular files
+using read(). All the functions defined here return a tuple of
+successfully processed files.</p>
+
+<h2>
+<a id="compatability" class="anchor" href="#compatability" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Compatability</h2>
+
+<p>Tested Combinations:  </p>
+
+<ul>
+<li>  Windows 10/8/7</li>
+<li>  Most Linux Distros</li>
+<li>  Python (3.5,3.4,2.7)</li>
+</ul>
+
+<p>Using this module in any combination other than those listed above may
+produce unexpected results.</p>
+
+<p>Unfortunately this module is currently incompatable with OSX, so do not
+install it without proper undertsanding of the source code.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>pip install filemapper
+</code></pre>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
+
+<pre><code>&gt;&gt;&gt;import filemapper as fm
+&gt;&gt;&gt;help(fm) #This will display help for this module
+</code></pre>
+
+<h4>
+<a id="creating-variables" class="anchor" href="#creating-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating variables</h4>
+
+<pre><code>&gt;&gt;&gt;import filemapper as fm
+&gt;&gt;&gt;print fm.create('resources') #Creates variables for files within the folder resources
+{'nouns.dat':u'resources\\nouns.dat','adjectives.dat':u'resources\\adjectives.dat'}
+&gt;&gt;&gt;f = open(fm.read('nouns.dat')) #Passed into read() before it can be used.
+&gt;&gt;&gt;for i in f:print i #Prints out the whole 'nouns.dat'
+A-bomb
+A-bombs
+A-frame
+[Trunctuated 90959 Lines]
+zymurgy
+</code></pre>
+
+<p>Example Case</p>
+
+<pre><code>&gt;&gt;&gt;f = fm.create('resources')
+&gt;&gt;&gt;new_f = [sub_f[0] for sub_f in f.items()]
+&gt;&gt;&gt;for i in new_f: #Only prints the content of files that start with 'a'
+...    if i[0] == 'a':
+...        for x in  open(i, 'r'):print x
+[Stdout Ommitted due to large size]
+</code></pre>
+
+<h4>
+<a id="loading-files" class="anchor" href="#loading-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loading Files</h4>
+
+<pre><code>&gt;&gt;&gt;print fm.load('resources','w') #Omittiing the second argument will default to read only mode
+('nouns.dat','adjectives.dat')
+&gt;&gt;&gt;for i in fm.read('nouns.dat'):print i
+[Stdout Ommitted due to large size]
+</code></pre>
+
+<h4>
+<a id="closing-files" class="anchor" href="#closing-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Closing Files</h4>
+
+<pre><code>&gt;&gt;&gt;fm.close('nouns.dat')
+('adjectives.dat')
+&gt;&gt;&gt;fm.close() #Closes all the files
+</code></pre>
+
+<p>[<img src="https://img.shields.io/travis/daegontaven/filemapper/master.svg?maxAge=2592000?style=plastic" alt="image">]: <a href="https://travis-ci.org/daegontaven/filemapper">https://travis-ci.org/daegontaven/filemapper</a></p>
+
+<p>[<img src="https://img.shields.io/codecov/c/github/daegontaven/filemapper.svg?maxAge=2592000?style=plastic" alt="image">]: <a href="https://codecov.io/gh/daegontaven/filemapper">https://codecov.io/gh/daegontaven/filemapper</a></p>
+
+<p>[<img src="https://img.shields.io/pypi/v/filemapper.svg?maxAge=2592000?style=plastic" alt="image">]: <a href="https://pypi.python.org/pypi/filemapper">https://pypi.python.org/pypi/filemapper</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/daegontaven">daegontaven</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
