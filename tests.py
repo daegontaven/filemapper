@@ -2,10 +2,10 @@
 # coding:utf-8
 # Tests
 
-from nose.tools import *
 import filemapper as fm
+from nose.tools import *
 
-        
+
 def test_setup():
     print("begin test_setup")
     print(fm.create('resources'))
@@ -48,7 +48,7 @@ def test_open():
 
 
 def test_create():
-    print("being test_create")
+    print("begin test_create")
     try:
         print(fm.reset())
     except:
@@ -57,7 +57,8 @@ def test_create():
     print("test_create passed")
 
 
-#if __name__ == "__main__":
+if __name__ == "__main__":
+    pass
 #    test_setup()
 #    test_close()
 #    test_open()

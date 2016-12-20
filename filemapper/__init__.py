@@ -12,11 +12,13 @@ be accessed like regular files using read(). All the functions defined here
 return a tuple of successfully processed files.
 """
 
-# Imports
+# Backward Compatabilty Imports
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
+
+# Imports
 from . import core
 import sys
 
@@ -162,7 +164,6 @@ def clear():
     flag = None
     file_dict = {}
     closed_files = []
-        
 
-#if __name__ == "__main__":
-#    print(load())
+# if __name__ == "__main__":
+#     print(load())
