@@ -19,7 +19,7 @@ setup(
     url='https://github.com/daegontaven/filemapper',
     download_url='https://github.com/daegontaven/filemapper.git',
     author_email='admin@greycadet.com',
-    version='0.1.2',
+    version='0.1.3',
     license='GNU GENERAL PUBLIC LICENSE Version 3',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
