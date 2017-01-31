@@ -63,7 +63,7 @@ def load(path=None, mode='r'):
         try:
             file_dict[file_name[0]] = open(file_name[1], mode)
             crr_files.append(file_name[0])
-        except IOError:
+        except IOError:  # pragma: no cover
             err_files.append(file_name[0])
     if err_files != []:
         raise IOError(', '.join(str(err_file) for err_file in err_files) +
